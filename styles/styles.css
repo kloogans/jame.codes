@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+@import "navbar.css";
+@import "nav-menu.css";
+
+:root {
+  --purple: #7000fa;
+  --white: #fff;
+  --black: #151515;
+  --light-black: #333;
+  --teal: #00fff0;
+  --yellow: #fae500;
+  --yellow-hover: #fae500;
+  --main-font: "Share Tech Mono", monospace;
+  --grid-pattern: repeating-linear-gradient(
+      var(--black) 1px,
+      var(--black) 2px,
+      transparent 3px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      to right,
+      var(--black) 0,
+      var(--black) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      to right,
+      var(--black) 0,
+      var(--black) 2px,
+      transparent 2px,
+      transparent 10px
+    );
+}
+
+body {
+  background: var(--black);
+  margin: 0;
+  overflow: hidden;
+}
+
+button {
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.bg--purple {
+  background-color: var(--purple);
+}
+
+.bg--teal {
+  background-color: var(--teal);
+}
+
+.bg--yellow {
+  background-color: var(--yellow);
+}
+
+.bg--yellow:hover {
+  box-shadow: 0 0 10px var(--yellow);
+}
+
+.font-share-tech {
+  font-family: var(--main-font);
+}
+
+.close-icon {
+  position: relative;
+  transform: translateY(1px);
+  width: 10px;
+  height: 10px;
+}
+
+.close-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--black);
+  width: 4px;
+  transform: rotate(-45deg);
+  height: 100%;
+}
+
+.close-icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--black);
+  width: 4px;
+  height: 100%;
+  transform: rotate(45deg);
+}
+
+.menu-icon {
+  position: relative;
+  width: 10px;
+  height: 8px;
+}
+
+.menu-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+  height: 3px;
+  width: 8px;
+}
+
+.menu-icon::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 8px;
+  height: 3px;
+  background: var(--white);
+}
+
+grid-pattern-background {
+  background-color: var(--light-black);
+  background-image: var(--grid-pattern);
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+}
+
+.animate-fade-in-with-delay {
+  animation: fade-in 0.2s ease-in-out;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.border-step1 {
+  box-shadow: 8px 0 var(--yellow), -8px 0 var(--yellow), 0 -8px var(--yellow),
+    0 8px var(--yellow);
+}
+
+.border-step-purple {
+  box-shadow: 8px 0 var(--purple), -8px 0 var(--purple), 0 -8px var(--purple),
+    0 8px var(--purple);
+}
+
+.steps-transition {
+  transition: all 0.4s steps(5, end);
+}
+
+.main-btn {
+  background: var(--yellow);
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
+  box-shadow: inset -4px -4px 0px 0px #e59400;
+}
+
+.main-btn:hover,
+.main-btn:focus {
+  background: #f2c409;
+  box-shadow: inset -6px -6px 0px 0px #e59400;
+}
+.main-btn:active {
+  box-shadow: inset 4px 4px 0px 0px #e59400;
+}
+.main-btn:before,
+.main-btn:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+}
+.main-btn:before {
+  top: -6px;
+  left: 0;
+  border-top: 6px black solid;
+  border-bottom: 6px black solid;
+}
+.main-btn:after {
+  left: -6px;
+  top: 0;
+  border-left: 6px black solid;
+  border-right: 6px black solid;
+}

@@ -1,0 +1,42 @@
+.navbar {
+  height: 120px;
+}
+
+logo-inner {
+  box-sizing: border-box;
+  padding: 0.2rem 0;
+}
+
+.logo-gif {
+  background: url("https://cdn.discordapp.com/attachments/919408599963430934/965082987010072668/jamus-fluff-purple.gif")
+    no-repeat center;
+  background-size: contain;
+  width: 65px;
+  height: 60px;
+  transform: scaleX(-1);
+}
+
+nav-menu-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.nav-button {
+  min-width: 5.625rem;
+  box-sizing: border-box;
+}
+
+.nav-button:hover {
+  background-color: var(--yellow);
+  box-shadow: 0 0 10px 0 var(--yellow);
+  color: var(--black);
+}
+
+.nav-button:hover > .menu-icon::before,
+.nav-button:hover > .menu-icon::after {
+  background-color: var(--black);
+}

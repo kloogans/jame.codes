@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>videojame</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+  </head>
+  <body>
+    <nav id="nav" class="fixed w-full bg-zinc-900 overflow-hidden z-30 navbar">
+      <grid-pattern-background
+        class="absolute top-0 left-0 bg--purple z-40"
+      ></grid-pattern-background>
+
+      <logo
+        role="button"
+        onclick="changeRoute('home')"
+        class="absolute top-0 left-0 h-full ml-4 flex items-center justify-center z-50"
+      >
+        <logo-inner class="flex items-center justify-center bg-zinc-900">
+          <div class="logo-gif"></div>
+          <p class="text-xl text-white font-share-tech pr-4">jame</p>
+        </logo-inner>
+      </logo>
+
+      <nav-menu-button class="mr-4 z-50">
+        <button
+          id="nav-menu-button"
+          class="flex items-center justify-center mr-1 z-20 bg-zinc-900 px-3 py-2 text-white text-xl font-share-tech nav-button"
+          title="menu"
+          onclick="toggleMenu()"
+        >
+          <div class="menu-icon mr-1"></div>
+          menu
+        </button>
+      </nav-menu-button>
+    </nav>
+
+    <nav-menu
+      class="border-step1 absolute right-0 w-full h-full z-30 flex flex-col items-center justify-center"
+      style="
+        max-height: calc(100% - 144px);
+        transform: translate(calc(100% + 8px), 12px);
+      "
+    >
+      <grid-pattern-background
+        class="absolute top-0 left-0 bg-zinc-800 z-40 z-50"
+      ></grid-pattern-background>
+
+      <nav-menu-clickable
+        class="hidden z-[-1] absolute right-0 w-screen h-full"
+      ></nav-menu-clickable>
+
+      <ul
+        class="flex flex-col justify-start items-center w-full h-full menu-list"
+      >
+        <li class="w-full p-4 z-50">
+          <p class="text-lg text-white font-share-tech text-center">menu</p>
+        </li>
+        <li class="w-full p-4 z-50">
+          <button
+            id="btn-home"
+            onclick="changeRoute('home')"
+            class="w-full h-full bg--yellow text-zinc-900 font-share-tech z-50 text-center text-lg mb-4 px-2"
+          >
+            home
+          </button>
+        </li>
+        <li class="w-full p-4 z-50">
+          <button
+            id="btn-work"
+            onclick="changeRoute('work')"
+            class="w-full h-full bg--yellow text-zinc-900 font-share-tech z-50 text-center text-lg mb-4 px-2"
+          >
+            my work
+          </button>
+        </li>
+        <li class="w-full p-4 z-50">
+          <button
+            id="btn-discord"
+            class="w-full h-full bg--yellow text-zinc-900 font-share-tech z-50 text-center text-lg mb-4 px-2"
+          >
+            my discord
+          </button>
+        </li>
+        <li class="w-full p-4 z-50">
+          <button
+            id="btn-contact"
+            class="w-full h-full bg--yellow text-zinc-900 font-share-tech z-50 text-center text-lg mb-4 px-2"
+          >
+            get in touch
+          </button>
+        </li>
+      </ul>
+    </nav-menu>
+
+    <main
+      id="main"
+      class="w-[200vw] h-full flex items-center flex-auto translate-x-[0] steps-transition"
+      style="min-height: calc(100vh - 120px)"
+    >
+      <h1 id="intro" class="flex flex-col items-center justify-center w-screen">
+        <span
+          id="heading-pre-text"
+          class="text-lg font-share-tech text-center text-zinc-400 z-20 opacity-0 transition duration-200 ease-in-out"
+        >
+          hi i'm
+        </span>
+        <canvas
+          id="crumble-text"
+          height="100%"
+          class="z-10 max-w-[100vw] h-screen mt-[120px]"
+        ></canvas>
+      </h1>
+
+      <work-section
+        id="work"
+        class="flex flex-col items-center justify-center w-screen"
+      >
+        <h2 class="font-share-tech text-zinc-400 text-2xl mb-10">
+          latest work
+        </h2>
+        <ul class="text-white grid grid-cols-2 gap-8 w-full max-w-[55rem]">
+          <li
+            class="border-step-purple w-full pt-5 bg-zinc-700 flex flex-col items-center justify-center"
+          >
+            <div
+              style="
+                background: url('/images/mepage-logo-text.svg') no-repeat;
+                background-size: contain;
+                background-position: 0 100%;
+              "
+              class="w-[12rem] h-12 min-h-[3rem] mb-5 -translate-x-[5%]"
+            ></div>
+            <work-item-content
+              class="w-full bg--purple py-5 flex flex-col items-center justify-center flex-auto"
+            >
+              <p class="text-white text-md font-share-tech text-center mb-5">
+                supercharge your online presence with <strong>one</strong> link.
+              </p>
+              <button
+                class="text-black font-share-tech text-lg px-2 py-1 main-btn"
+                title="learn more"
+              >
+                learn more
+              </button>
+            </work-item-content>
+          </li>
+          <li
+            class="border-step-purple w-full bg-zinc-700 flex pt-5 flex-col items-center justify-center"
+          >
+            <p class="text-4xl font-bold mb-5 min-h-[3rem]">drafty</p>
+            <work-item-content
+              class="w-full bg--purple py-5 flex flex-col items-center justify-center flex-auto"
+            >
+              <p class="text-white text-md font-share-tech text-center mb-5">
+                a minimalist writing app for twitter users.
+              </p>
+              <button
+                class="text-black font-share-tech text-lg px-2 py-1 main-btn"
+                title="learn more"
+              >
+                learn more
+              </button>
+            </work-item-content>
+          </li>
+        </ul>
+      </work-section>
+    </main>
+
+    <footer
+      class="absolute bottom-0 pb-3 w-full flex items-center justify-center"
+    >
+      <p
+        id="footer-text"
+        class="text-center text-zinc-400 font-share-tech z-40"
+      ></p>
+    </footer>
+
+    <!-- scripts -->
+    <script type="module" src="/src/navbar.ts"></script>
+    <script type="module" src="/src/navMenu.ts"></script>
+    <script type="module" src="/src/navigationHandler.ts"></script>
+    <script type="module" src="/src/ui.ts"></script>
+    <script type="module" src="/src/crumblyText.js"></script>
+  </body>
+</html>

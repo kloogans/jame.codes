@@ -14,15 +14,15 @@ export const changeRoute = (route: string): void => {
   toggleMenu(false)
 
   if (currentRoute === "home") {
-    main.style.transform = "translateX(0)"
+    main.style.transform = "translateX(33.3333%)"
   }
 
   if (currentRoute === "work") {
-    main.style.transform = "translateX(-33.3333%)"
+    main.style.transform = "translateX(0)"
   }
 
   if (currentRoute === "contact") {
-    main.style.transform = "translateX(-66.6666%)"
+    main.style.transform = "translateX(-33.3333%)"
   }
 }
 

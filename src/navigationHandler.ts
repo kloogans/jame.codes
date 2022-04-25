@@ -18,7 +18,11 @@ export const changeRoute = (route: string): void => {
   }
 
   if (currentRoute === "work") {
-    main.style.transform = "translateX(-50%)"
+    main.style.transform = "translateX(-33.3333%)"
+  }
+
+  if (currentRoute === "contact") {
+    main.style.transform = "translateX(-66.6666%)"
   }
 }
 

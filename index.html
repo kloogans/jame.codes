@@ -87,6 +87,7 @@
         </li>
         <li class="w-full p-4 z-50">
           <button
+            onclick="changeRoute('contact')"
             id="btn-contact"
             class="w-full h-full bg--yellow text-zinc-900 font-share-tech z-50 text-center text-lg mb-4 px-2"
           >
@@ -131,7 +132,7 @@
 
     <main
       id="main"
-      class="w-[200vw] h-screen flex items-center flex-auto translate-x-[0] steps-transition"
+      class="w-[300vw] h-screen flex items-center flex-auto translate-x-[0] steps-transition"
       style="min-height: calc(100vh - 120px)"
     >
       <intro-section
@@ -140,7 +141,7 @@
       >
         <p
           id="heading-pre-text"
-          class="text-lg font-share-tech text-center text-zinc-400 z-20 opacity-0 transition duration-200 ease-in-out"
+          class="text-lg font-share-tech text-center text-zinc-400 z-20 opacity-0 -translate-y-[2rem] transition duration-200 ease-in-out"
         >
           hi i'm
         </p>
@@ -151,7 +152,7 @@
         ></canvas>
         <p
           id="heading-post-text"
-          class="flex flex-col items-center justify-center text-lg font-share-tech text-center text-zinc-400 z-20 opacity-0 transition duration-200 ease-in-out translate-y-[15rem]"
+          class="flex flex-col items-center justify-center text-lg font-share-tech text-center text-zinc-400 z-20 opacity-0 transition duration-200 ease-in-out translate-y-[16rem]"
         >
           <span class="mb-5">
             fullstack software developer & social media copywriter
@@ -175,7 +176,7 @@
         </h2>
         <ul class="text-white grid grid-cols-2 gap-8 w-full max-w-[55rem]">
           <li
-            class="border-step-purple w-full pt-5 bg-zinc-700 flex flex-col items-center justify-center"
+            class="border-step-purple w-full pt-5 bg-zinc-800 flex flex-col items-center justify-center"
           >
             <div
               style="
@@ -201,7 +202,7 @@
             </work-item-content>
           </li>
           <li
-            class="border-step-purple w-full bg-zinc-700 flex pt-5 flex-col items-center justify-center"
+            class="border-step-purple w-full bg-zinc-800 flex pt-5 flex-col items-center justify-center"
           >
             <p class="text-4xl font-bold mb-5 min-h-[3rem]">drafty</p>
             <work-item-content
@@ -220,7 +221,7 @@
             </work-item-content>
           </li>
           <li
-            class="border-step-purple w-full bg-zinc-700 flex pt-5 flex-col items-center justify-center"
+            class="border-step-purple w-full bg-zinc-800 flex pt-5 flex-col items-center justify-center"
           >
             <p class="text-4xl font-bold mb-5 min-h-[3rem]">nrdstr</p>
             <work-item-content
@@ -239,7 +240,7 @@
             </work-item-content>
           </li>
           <li
-            class="border-step-purple w-full bg-zinc-700 flex pt-5 flex-col items-center justify-center"
+            class="border-step-purple w-full bg-zinc-800 flex pt-5 flex-col items-center justify-center"
           >
             <p class="text-4xl font-bold mb-5 min-h-[3rem]">movie colors</p>
             <work-item-content
@@ -266,14 +267,54 @@
             &lt;- destroy my name
           </button>
           <button
-            onclick="changeRoute('work')"
+            onclick="changeRoute('contact')"
             class="text-black font-share-tech text-lg px-2 py-1 main-btn z-20"
             title="learn more"
           >
-            see my work ->
+            get in touch ->
           </button>
         </ul>
       </work-section>
+
+      <contact-section
+        id="contact"
+        class="flex flex-col items-center justify-center w-screen"
+      >
+        <h2 class="font-share-tech text-zinc-400 text-2xl mb-10">
+          where to catch up with me
+        </h2>
+        <!-- a list with github, twitter, and email links -->
+        <div class="text-white grid grid-cols-2 gap-8 w-full max-w-xl mb-10">
+          <a
+            href="https://github.com/jamesfromonline"
+            class="border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-2 text-xl text-white hover:text-[#00fff0] font-share-tech"
+          >
+            <img src="/images/github-icon.png" alt="github" class="w-16 h-16" />
+            <span class="ml-2">github</span>
+          </a>
+          <a
+            href="https://twitter.com/videojame_"
+            class="border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-2 text-xl text-white hover:text-[#00fff0] font-share-tech"
+          >
+            <img
+              src="/images/twitter-icon.png"
+              alt="twitter"
+              class="w-16 h-16"
+            />
+            <span class="ml-2">twitter</span>
+          </a>
+        </div>
+        <p class="text-zinc-400 text-lg text-center mb-5 font-share-tech">or</p>
+        <email-container class="text-xl text-white font-share-tech">
+          <button
+            id="email-button"
+            onclick="handleShowEmail()"
+            class="text-[#00fff0] hover:text-[#02c0b5]"
+          >
+            <strong>click</strong> to show email
+          </button>
+        </email-container>
+      </contact-section>
     </main>
 
     <footer

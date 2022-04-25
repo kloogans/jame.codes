@@ -1,12 +1,9 @@
 import { toggleMenu } from "./navMenu"
-
-// const introSection = document.querySelector("#intro") as HTMLElement
-// const workSection = document.querySelector("work-section") as HTMLElement
 const main = document.querySelector("#main") as HTMLElement
 
 let currentRoute = "home"
 
-export const changeRoute = (route: string) => {
+export const changeRoute = (route: string): void => {
   const btn = document.querySelector(`#btn-${route}`) as HTMLElement
   const currentBtn = document.querySelector(
     `#btn-${currentRoute}`
@@ -24,3 +21,5 @@ export const changeRoute = (route: string) => {
     main.style.transform = "translateX(-50%)"
   }
 }
+
+window.changeRoute = changeRoute

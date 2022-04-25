@@ -6,7 +6,7 @@ const navMenuClickable = document.querySelector(
 
 let menuIsToggled = false
 
-export const toggleMenu = (position?: boolean) => {
+export const toggleMenu = (position?: boolean): void => {
   menuIsToggled = position ?? !menuIsToggled
   if (menuIsToggled) {
     if (navMenu) {
@@ -29,5 +29,3 @@ export const toggleMenu = (position?: boolean) => {
 }
 
 window.toggleMenu = toggleMenu
-
-// export {}

@@ -96,24 +96,75 @@
       </ul>
     </nav-menu>
 
+    <work-item-popout
+      class="border-step1 absolute left-0 w-full max-w-xl h-full z-30 flex flex-col items-center justify-center"
+      style="
+        max-height: calc(100% - 144px);
+        transform: translate(calc(-100% - 8px), 132px);
+      "
+    >
+      <button
+        class="absolute top-4 right-4 p-4 text-lg text-white hover:text-[#00fff0] font-share-tech text-center z-[100]"
+        onclick="toggleWorkItemPopout(false)"
+      >
+        close
+      </button>
+      <grid-pattern-background
+        class="absolute top-0 left-0 bg-zinc-800 z-40 z-50"
+      ></grid-pattern-background>
+
+      <work-item
+        class="w-full h-full p-4 flex flex-col items-center justify-start"
+      ></work-item>
+
+      <work-item-popout-clickable
+        style="left: calc(100% + 8px); height: calc(100% + 1rem)"
+        class="flex flex-col items-center justify-center hidden z-[-1] absolute w-screen"
+      >
+        <p
+          class="font-share-tech text-center text-4xl text-white opacity-0 group-hover:opacity-100 transition duration-200 ease"
+        >
+          close
+        </p>
+      </work-item-popout-clickable>
+    </work-item-popout>
+
     <main
       id="main"
-      class="w-[200vw] h-full flex items-center flex-auto translate-x-[0] steps-transition"
+      class="w-[200vw] h-screen flex items-center flex-auto translate-x-[0] steps-transition"
       style="min-height: calc(100vh - 120px)"
     >
-      <h1 id="intro" class="flex flex-col items-center justify-center w-screen">
-        <span
+      <intro-section
+        id="intro"
+        class="flex flex-col items-center justify-center w-screen h-full"
+      >
+        <p
           id="heading-pre-text"
           class="text-lg font-share-tech text-center text-zinc-400 z-20 opacity-0 transition duration-200 ease-in-out"
         >
           hi i'm
-        </span>
+        </p>
         <canvas
           id="crumble-text"
           height="100%"
-          class="z-10 max-w-[100vw] h-screen mt-[120px]"
+          class="z-10 max-w-[100vw] h-screen"
         ></canvas>
-      </h1>
+        <p
+          id="heading-post-text"
+          class="flex flex-col items-center justify-center text-lg font-share-tech text-center text-zinc-400 z-20 opacity-0 transition duration-200 ease-in-out translate-y-[15rem]"
+        >
+          <span class="mb-5">
+            fullstack software developer & social media copywriter
+          </span>
+          <button
+            onclick="changeRoute('work')"
+            class="text-black font-share-tech text-lg px-2 py-1 main-btn z-20"
+            title="learn more"
+          >
+            see my work ->
+          </button>
+        </p>
+      </intro-section>
 
       <work-section
         id="work"
@@ -143,6 +194,7 @@
               <button
                 class="text-black font-share-tech text-lg px-2 py-1 main-btn"
                 title="learn more"
+                onclick="toggleWorkItemPopout(true, 'mepage')"
               >
                 learn more
               </button>
@@ -161,17 +213,71 @@
               <button
                 class="text-black font-share-tech text-lg px-2 py-1 main-btn"
                 title="learn more"
+                onclick="toggleWorkItemPopout(true, 'drafty')"
               >
                 learn more
               </button>
             </work-item-content>
           </li>
+          <li
+            class="border-step-purple w-full bg-zinc-700 flex pt-5 flex-col items-center justify-center"
+          >
+            <p class="text-4xl font-bold mb-5 min-h-[3rem]">nrdstr</p>
+            <work-item-content
+              class="w-full bg--purple py-5 flex flex-col items-center justify-center flex-auto"
+            >
+              <p class="text-white text-md font-share-tech text-center mb-5">
+                a digital design agency.
+              </p>
+              <button
+                class="text-black font-share-tech text-lg px-2 py-1 main-btn"
+                title="learn more"
+                onclick="toggleWorkItemPopout(true, 'nrdstr')"
+              >
+                learn more
+              </button>
+            </work-item-content>
+          </li>
+          <li
+            class="border-step-purple w-full bg-zinc-700 flex pt-5 flex-col items-center justify-center"
+          >
+            <p class="text-4xl font-bold mb-5 min-h-[3rem]">movie colors</p>
+            <work-item-content
+              class="w-full bg--purple py-5 flex flex-col items-center justify-center flex-auto"
+            >
+              <p class="text-white text-md font-share-tech text-center mb-5">
+                twitter bot that tweets color palettes derived from movie
+                posters.
+              </p>
+              <button
+                class="text-black font-share-tech text-lg px-2 py-1 main-btn"
+                title="learn more"
+                onclick="toggleWorkItemPopout(true, 'movie colors bot')"
+              >
+                learn more
+              </button>
+            </work-item-content>
+          </li>
+          <button
+            onclick="changeRoute('home')"
+            class="text-black font-share-tech text-lg px-2 py-1 main-btn z-20"
+            title="learn more"
+          >
+            &lt;- destroy my name
+          </button>
+          <button
+            onclick="changeRoute('work')"
+            class="text-black font-share-tech text-lg px-2 py-1 main-btn z-20"
+            title="learn more"
+          >
+            see my work ->
+          </button>
         </ul>
       </work-section>
     </main>
 
     <footer
-      class="absolute bottom-0 pb-3 w-full flex items-center justify-center"
+      class="absolute bottom-0 pb-3 w-full z-20 flex items-center justify-center"
     >
       <p
         id="footer-text"
@@ -183,7 +289,8 @@
     <script type="module" src="/src/navbar.ts"></script>
     <script type="module" src="/src/navMenu.ts"></script>
     <script type="module" src="/src/navigationHandler.ts"></script>
+    <script type="module" src="/src/workItemPopout.ts"></script>
     <script type="module" src="/src/ui.ts"></script>
-    <script type="module" src="/src/crumblyText.js"></script>
+    <script type="module" src="/src/crumblyText.ts"></script>
   </body>
 </html>

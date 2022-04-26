@@ -21,7 +21,7 @@ let popoutIsToggled = false
 const createTemplate = (data: WorkItemPopoutProps): string => {
   const { title, logo, description, url } = data
   return `
-        <div class="flex flex-col items-center justify-center z-50 bg-zinc-900 p-4 w-full h-full overflow-y-auto overflow-x-hidden">
+        <div class="flex flex-col items-center justify-start z-50 bg-zinc-900 p-4 w-full h-full overflow-y-auto overflow-x-hidden">
             <img class='mb-2' src="${logo}" alt="${title}" style="width: 4rem; height: 4rem;" />
             <div class="text-2xl text-white font-share-tech text-center mb-4">
                 ${title}
@@ -29,12 +29,12 @@ const createTemplate = (data: WorkItemPopoutProps): string => {
             </div>
             
             <div class="text-md text-white font-share-tech flex-auto w-full">
-                <span class='mb-4'>${description}</span>
-                <ul style='grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; margin-top: 1.25rem;' class='grid place-items-center w-full'>
+                <span class='mb-4 text-left'>${description}</span>
+                <ul style='margin-top: 1.25rem; flex-wrap: wrap;' class='flex items-center justify-start'>
                     ${data.stack
                       .map(
                         (stack) =>
-                          `<li class='px-2 py-1 mr-2 text-black text-center text-md font-share-tech bg--yellow'>${stack}</li>`
+                          `<li style='margin-bottom: 0.5rem;' class='px-2 py-1 mr-2 mb-2 text-black text-center text-md font-share-tech bg--yellow'>${stack}</li>`
                       )
                       .join("")}
                 </ul>

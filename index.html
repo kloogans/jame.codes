@@ -45,9 +45,9 @@
       </nav>
 
       <nav-menu
-        class="border-step1 absolute right-0 w-full h-full z-30 flex flex-col items-center justify-center"
+        class="border-step1 fixed right-0 w-full h-full z-30 flex flex-col items-center justify-center"
         style="
-          max-height: calc(100% - 144px);
+          max-height: calc(100vh - 144px);
           transform: translate(calc(100% + 8px), 12px);
         "
       >
@@ -104,14 +104,14 @@
       </nav-menu>
 
       <work-item-popout
-        class="border-step1 absolute left-0 w-full max-w-xl h-full z-30 flex flex-col items-center justify-center"
+        class="border-step1 fixed top-0 left-0 w-full lg:max-w-xl h-full z-30 flex flex-col items-center justify-center"
         style="
           max-height: calc(100% - 144px);
           transform: translate(calc(-100% - 8px), 132px);
         "
       >
         <button
-          class="absolute top-4 right-4 p-4 text-lg text-white hover:text-[#00fff0] font-share-tech text-center z-[100]"
+          class="absolute top-4 right-4 p-4 text-lg text-white hover:text-[#00fff0] bg-zinc-700 font-share-tech text-center z-[100]"
           onclick="toggleWorkItemPopout(false)"
         >
           close
@@ -321,7 +321,7 @@
           <p class="text-zinc-400 text-lg text-center mb-5 font-share-tech">
             or
           </p>
-          <email-container class="text-xl text-white font-share-tech">
+          <email-container class="text-xl text-white font-share-tech mb-10">
             <button
               id="email-button"
               onclick="handleShowEmail()"
@@ -330,6 +330,15 @@
               <strong>click</strong> to show email
             </button>
           </email-container>
+
+          <button
+            onclick="changeRoute('home')"
+            class="flex items-center justify-center text-black font-share-tech text-lg px-2 py-2 main-btn z-20 w-full max-w-[12rem]"
+            title="go home"
+          >
+            <p class="rotate-90 lg:rotate-0">&lt;-</p>
+            <p class="ml-2">go home</p>
+          </button>
         </contact-section>
       </main>
 

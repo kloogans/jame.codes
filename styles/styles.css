@@ -247,3 +247,9 @@ grid-pattern-background {
 work-item-popout {
   transition: all 0.2s steps(3, end);
 }
+
+@media (max-width: 768px) {
+  work-item-popout {
+    max-width: calc(100vw - 28px);
+  }
+}

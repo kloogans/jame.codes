@@ -23,7 +23,7 @@ let context: CanvasRenderingContext2D | null
 let bgCanvas: HTMLCanvasElement | null
 let bgContext: CanvasRenderingContext2D | null
 
-const keyword = "jame"
+const keyword = "james"
 const denseness = 10
 
 const parts: PartsProps[] = []
@@ -48,8 +48,8 @@ const initialize = function (canvas_id: string) {
   bgCanvas.width = window.innerWidth
   bgCanvas.height = window.innerHeight
 
-  canvas.addEventListener("mousemove", MouseMove, false)
-  canvas.addEventListener("mouseout", MouseOut, false)
+  canvas.addEventListener("mousedown", MouseMove, false)
+  canvas.addEventListener("mouseup", MouseOut, false)
 
   start()
 }
@@ -57,11 +57,11 @@ const initialize = function (canvas_id: string) {
 const start = function () {
   const textSize = window.innerWidth > 767 ? 300 : 170
   if (bgContext) {
-    bgContext.fillStyle = "#151515"
+    bgContext.fillStyle = "#020202"
     bgContext.font = `${textSize}px impact`
     bgContext.fillText(
       keyword,
-      window.innerWidth / (window.innerWidth > 767 ? 2 : 2.13) - textSize,
+      window.innerWidth / (window.innerWidth > 767 ? 2.2 : 2.14) - textSize,
       window.innerHeight / (window.innerWidth > 767 ? 1.48 : 2)
     )
   }
@@ -143,14 +143,14 @@ const update = function () {
     sqrDist = Math.sqrt(dx * dx + dy * dy)
 
     if (sqrDist < 20) {
-      parts[i].c = color
+      parts[i].c = "#7000fa"
 
       parts[i].r = true
     }
 
     if (context) {
       context.fillStyle = parts[i].c
-      context.strokeStyle = "#151515"
+      context.strokeStyle = "#020202"
       context.beginPath()
       context.rect(parts[i].x2, parts[i].y2, 10, 10)
       context.fill()

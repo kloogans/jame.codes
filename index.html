@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +10,23 @@
     <link rel="stylesheet" href="/styles/styles.css" />
   </head>
   <body class="overflow-x-hidden w-screen relative">
-    <div class="gradient-lines z-50 pointer-events-none hidden lg:block"></div>
+    <video-overlay
+      class="gradient-lines z-50 pointer-events-none hidden lg:block mix-blend-lighten"
+    >
+      <video
+        playsinline
+        autoplay
+        muted
+        loop
+        poster="/assets/lines.mp4"
+        id="bgvid"
+        class="w-screen h-screen object-cover fixed left-0 top-0 pointer-events-none"
+      >
+        <source src="/assets/lines.webm" type="video/webm" />
+        <source src="/assets/lines.mp4" type="video/mp4" />
+      </video>
+    </video-overlay>
+
     <app-container
       class="flex flex-col items-center justify-center w-full overflow-x-hidden relative z-[1]"
     >
@@ -28,7 +45,7 @@
         >
           <logo-inner class="flex items-center justify-center bg-zinc-900">
             <div class="logo-gif"></div>
-            <p class="text-xl text-white font-share-tech pr-4">jame</p>
+            <p class="text-xl text-white font-share-tech pr-4">james</p>
           </logo-inner>
         </logo>
 
@@ -86,19 +103,19 @@
           </li>
           <li class="w-full p-4 z-50">
             <button
-              id="btn-discord"
-              class="w-full h-full bg--yellow text-zinc-900 font-share-tech z-50 text-center text-lg mb-4 px-2"
-            >
-              my discord
-            </button>
-          </li>
-          <li class="w-full p-4 z-50">
-            <button
               onclick="changeRoute('contact')"
               id="btn-contact"
               class="w-full h-full bg--yellow text-zinc-900 font-share-tech z-50 text-center text-lg mb-4 px-2"
             >
               get in touch
+            </button>
+          </li>
+          <li class="w-full p-4 z-50">
+            <button
+              id="btn-discord"
+              class="w-full h-full bg--yellow text-zinc-900 font-share-tech z-50 text-center text-lg mb-4 px-2"
+            >
+              my discord
             </button>
           </li>
         </ul>
@@ -190,7 +207,7 @@
             >
               <div
                 style="
-                  background: url('/images/mepage-logo-text.svg') no-repeat;
+                  background: url('/assets/mepage-logo-text.svg') no-repeat;
                   background-size: contain;
                   background-position: 0 100%;
                 "
@@ -301,7 +318,7 @@
               class="border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-2 text-xl text-white hover:text-[#00fff0] font-share-tech"
             >
               <img
-                src="/images/github-icon.png"
+                src="/assets/github-icon.png"
                 alt="github"
                 class="w-16 h-16"
               />
@@ -312,7 +329,7 @@
               class="border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-2 text-xl text-white hover:text-[#00fff0] font-share-tech"
             >
               <img
-                src="/images/twitter-icon.png"
+                src="/assets/twitter-icon.png"
                 alt="twitter"
                 class="w-16 h-16"
               />
@@ -354,11 +371,10 @@
     </app-container>
 
     <!-- scripts -->
-    <script type="module" src="/src/navbar.ts"></script>
-    <script type="module" src="/src/navMenu.ts"></script>
-    <script type="module" src="/src/navigationHandler.ts"></script>
-    <script type="module" src="/src/workItemPopout.ts"></script>
-    <script type="module" src="/src/ui.ts"></script>
-    <script type="module" src="/src/crumblyText.ts"></script>
+    <script type="module" src="/src/navMenu.ts" defer></script>
+    <script type="module" src="/src/navigationHandler.ts" defer></script>
+    <script type="module" src="/src/workItemPopout.ts" defer></script>
+    <script type="module" src="/src/ui.ts" defer></script>
+    <script type="module" src="/src/crumblyText.ts" defer></script>
   </body>
 </html>

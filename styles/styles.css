@@ -253,3 +253,41 @@ work-item-popout {
     max-width: calc(100vw - 28px);
   }
 }
+
+.gradient-lines {
+  animation: lines 0.2s steps(3, end) infinite;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: calc(100vh + 10px);
+  width: 100%;
+}
+
+@keyframes lines {
+  0% {
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(180, 180, 180, 0) 0px,
+      rgba(180, 180, 180, 0) 2px,
+      rgba(180, 180, 180, 0.3) 3px
+    );
+  }
+
+  50% {
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(180, 180, 180, 0.3) 0px,
+      rgba(180, 180, 180, 0) 1px,
+      rgba(180, 180, 180, 0) 3px
+    );
+  }
+
+  100% {
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(180, 180, 180, 0) 0px,
+      rgba(180, 180, 180, 0) 2px,
+      rgba(180, 180, 180, 0.3) 3px
+    );
+  }
+}

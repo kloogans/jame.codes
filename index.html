@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="/styles/styles.css" />
   </head>
   <body class="overflow-x-hidden w-screen relative">
+    <div class="gradient-lines z-50 pointer-events-none hidden lg:block"></div>
     <app-container
-      class="flex flex-col items-center justify-center w-full overflow-x-hidden relative"
+      class="flex flex-col items-center justify-center w-full overflow-x-hidden relative z-[1]"
     >
       <nav
         id="nav"
-        class="fixed top-0 left-0 w-full max-w-screen bg-zinc-900 overflow-hidden z-30 navbar"
+        class="fixed top-0 w-full max-w-screen bg-zinc-900 overflow-hidden z-30 navbar"
       >
         <grid-pattern-background
           class="absolute top-0 left-0 bg--purple z-40"

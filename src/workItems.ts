@@ -20,9 +20,10 @@ export const workItems = [
     title: "drafty",
     logo: "/images/drafty-icon.svg",
     image: "",
-    description: "Drafty description",
+    description:
+      "twitter drafts are an incredibly nifty feature, but if you frequently switch between devices, your drafts don't carry over. drafty was created to solve this problem by having a central place to write, store, and tweet your ideas. <br /><br />drafty is a front-end client that uses google firebase for user authentication and to store and sync drafts across devices. the client is built with react and utilizes react's context api for state management.",
     url: "https://drafty.cc",
-    stack: ["react", "firebase", "scss"]
+    stack: ["react", "context api", "twitter", "firebase", "scss"]
   },
   {
     title: "zalories",

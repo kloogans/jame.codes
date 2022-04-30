@@ -111,14 +111,11 @@ const drawCircle = function (x: number, y: number) {
   }
 }
 
-const colors = ["#00fff0", "#fae500"]
-
 const update = function () {
   var i, dx, dy, sqrDist
   itercount++
   clear()
   for (i = 0; i < parts.length; i++) {
-    const color = colors[Number(Math.floor(Math.random() * 2).toFixed(0))]
     if (parts[i].r == true) {
       parts[i].x2 += parts[i].v.x
       parts[i].y2 += parts[i].v.y

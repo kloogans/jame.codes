@@ -32,6 +32,7 @@ const mouse = { x: -100, y: -100 }
 
 const itertot = 40
 let itercount = 0
+let isAnimating = true
 
 const initialize = (canvas_id: string) => {
   canvas = document.getElementById(canvas_id) as HTMLCanvasElement
@@ -109,28 +110,27 @@ const drawPixel = (x: number, y: number) => {
     })
   }
 }
-let hasMovingPixels: boolean = true
 
 const updateCanvas = () => {
-  var i, dx, dy, sqrDist
+  let dx, dy, sqrDist
   itercount++
   clearCanvas()
 
-  for (i = 0; i < parts.length; i++) {
-    if (parts[i].r == true) {
-      parts[i].x2 += parts[i].v.x
-      parts[i].y2 += parts[i].v.y
-      hasMovingPixels = true
+  parts.map((part, i) => {
+    if (part.r === true) {
+      part.x2 += part.v.x
+      part.y2 += part.v.y
     }
 
     if (itercount == itertot) {
-      parts[i].v = {
+      part.v = {
         x: Math.random() * 6 * 2 - 6,
         y: Math.random() * 6 * 2 - 6
       }
 
-      parts[i].r = false
+      part.r = false
       clearTimeout(timer)
+      isAnimating = false
 
       if (headerPreText) {
         headerPreText.style.opacity = "1"
@@ -140,78 +140,76 @@ const updateCanvas = () => {
       }
     }
 
-    if (canvas && parts[i].y2 > canvas.height) {
+    if (canvas && part.y2 > canvas.height) {
       parts.splice(i, 1)
-      hasMovingPixels = false
     }
 
-    if (canvas && parts[i].x2 > canvas.width) {
+    if (canvas && part.x2 > canvas.width) {
       parts.splice(i, 1)
-      hasMovingPixels = false
     }
 
-    dx = parts[i].x - mouse.x
-    dy = parts[i].y - mouse.y
+    dx = part.x - mouse.x
+    dy = part.y - mouse.y
     sqrDist = Math.sqrt(dx * dx + dy * dy)
 
     if (sqrDist < 20) {
-      parts[i].c = "#7000fa"
+      part.c = "#7000fa"
 
-      parts[i].r = true
+      part.r = true
     }
 
     if (context) {
-      context.fillStyle = parts[i].c
+      context.fillStyle = part.c
       context.strokeStyle = "#020202"
       context.beginPath()
-      context.rect(parts[i].x2, parts[i].y2, 10, 10)
+      context.rect(part.x2, part.y2, 10, 10)
       context.fill()
       context.stroke()
       context.closePath()
     }
-  }
-
-  if (!hasMovingPixels) clearTimeout(timer)
+  })
 }
 
 const colors = ["#00fff0", "#fae500"]
 const changePixelColors = () => {
-  var i, dx, dy, sqrDist
+  let dx, dy, sqrDist
   itercount++
   clearCanvas()
 
-  for (i = 0; i < parts.length; i++) {
+  parts.map((part, i) => {
     const color = Math.floor(Math.random() * colors.length)
-    dx = parts[i].x - mouse.x
-    dy = parts[i].y - mouse.y
+    dx = part.x - mouse.x
+    dy = part.y - mouse.y
     sqrDist = Math.sqrt(dx * dx + dy * dy)
 
     if (sqrDist < 20) {
-      parts[i].c = colors[color]
+      part.c = colors[color]
 
-      parts[i].r = false
+      part.r = false
     }
 
     if (context) {
-      context.fillStyle = parts[i].c
+      context.fillStyle = part.c
       context.strokeStyle = "#020202"
       context.beginPath()
-      context.rect(parts[i].x2, parts[i].y2, 10, 10)
+      context.rect(part.x2, part.y2, 10, 10)
       context.fill()
       context.stroke()
       context.closePath()
     }
-  }
+  })
 }
 
 const onMouseDown = (e: MouseEvent) => {
-  if (e.offsetX || e.offsetX == 0) {
-    if (canvas) {
-      mouse.x = e.offsetX - canvas.offsetLeft
-      mouse.y = e.offsetY - canvas.offsetTop
+  if (!isAnimating) {
+    if (e.offsetX || e.offsetX == 0) {
+      if (canvas) {
+        mouse.x = e.offsetX - canvas.offsetLeft
+        mouse.y = e.offsetY - canvas.offsetTop
+      }
     }
+    changePixelColors()
   }
-  changePixelColors()
 }
 
 const onMouseUp = () => {

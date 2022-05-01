@@ -176,7 +176,7 @@ const changePixelColors = () => {
   itercount++
   clearCanvas()
 
-  parts.map((part, i) => {
+  parts.map((part) => {
     const color = Math.floor(Math.random() * colors.length)
     dx = part.x - mouse.x
     dy = part.y - mouse.y

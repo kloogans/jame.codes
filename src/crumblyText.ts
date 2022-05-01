@@ -33,13 +33,12 @@ const mouse = { x: -100, y: -100 }
 const itertot = 40
 let itercount = 0
 
-const initialize = function (canvas_id: string) {
+const initialize = (canvas_id: string) => {
   canvas = document.getElementById(canvas_id) as HTMLCanvasElement
   if (canvas) {
     context = canvas.getContext("2d")
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
-    // if (context) context.x = 0
   }
 
   bgCanvas = document.createElement("canvas")
@@ -48,13 +47,13 @@ const initialize = function (canvas_id: string) {
   bgCanvas.width = window.innerWidth
   bgCanvas.height = window.innerHeight
 
-  canvas.addEventListener("mousedown", MouseMove, false)
-  canvas.addEventListener("mouseup", MouseOut, false)
+  canvas.addEventListener("mousedown", onMouseDown, false)
+  canvas.addEventListener("mouseup", onMouseUp, false)
 
   start()
 }
 
-const start = function () {
+const start = () => {
   const textSize = window.innerWidth > 767 ? 300 : 170
   if (bgContext) {
     bgContext.fillStyle = "#020202"
@@ -66,32 +65,32 @@ const start = function () {
     )
   }
 
-  clear()
-  getCoords()
+  clearCanvas()
+  getCoordinates()
 }
 
-const getCoords = function () {
+let timer: ReturnType<typeof setInterval>
+
+const getCoordinates = () => {
   let imageData, pixel, height, width
 
   if (bgContext && bgCanvas && canvas) {
     imageData = bgContext.getImageData(0, 0, canvas.width, canvas.height)
 
-    // quickly iterate over all pixels - leaving density gaps
     for (height = 0; height < bgCanvas.height; height += denseness) {
       for (width = 0; width < bgCanvas.width; width += denseness) {
         pixel = imageData.data[(width + height * bgCanvas.width) * 4 - 1]
-        //Pixel is black from being drawn on.
         if (pixel == 255) {
-          drawCircle(width, height)
+          drawPixel(width, height)
         }
       }
     }
   }
-
-  setInterval(update, 40)
+  clearTimeout(timer)
+  timer = setInterval(updateCanvas, 60)
 }
 
-const drawCircle = function (x: number, y: number) {
+const drawPixel = (x: number, y: number) => {
   if (canvas) {
     const startx = Math.random() * canvas?.width
     const starty = Math.random() * canvas?.height
@@ -110,15 +109,18 @@ const drawCircle = function (x: number, y: number) {
     })
   }
 }
+let hasMovingPixels: boolean = true
 
-const update = function () {
+const updateCanvas = () => {
   var i, dx, dy, sqrDist
   itercount++
-  clear()
+  clearCanvas()
+
   for (i = 0; i < parts.length; i++) {
     if (parts[i].r == true) {
       parts[i].x2 += parts[i].v.x
       parts[i].y2 += parts[i].v.y
+      hasMovingPixels = true
     }
 
     if (itercount == itertot) {
@@ -126,13 +128,26 @@ const update = function () {
         x: Math.random() * 6 * 2 - 6,
         y: Math.random() * 6 * 2 - 6
       }
+
       parts[i].r = false
+      clearTimeout(timer)
+
       if (headerPreText) {
         headerPreText.style.opacity = "1"
       }
       if (headerPostText) {
         headerPostText.style.opacity = "1"
       }
+    }
+
+    if (canvas && parts[i].y2 > canvas.height) {
+      parts.splice(i, 1)
+      hasMovingPixels = false
+    }
+
+    if (canvas && parts[i].x2 > canvas.width) {
+      parts.splice(i, 1)
+      hasMovingPixels = false
     }
 
     dx = parts[i].x - mouse.x
@@ -155,24 +170,57 @@ const update = function () {
       context.closePath()
     }
   }
+
+  if (!hasMovingPixels) clearTimeout(timer)
 }
 
-const MouseMove = function (e: MouseEvent) {
+const colors = ["#00fff0", "#fae500"]
+const changePixelColors = () => {
+  var i, dx, dy, sqrDist
+  itercount++
+  clearCanvas()
+
+  for (i = 0; i < parts.length; i++) {
+    const color = Math.floor(Math.random() * colors.length)
+    dx = parts[i].x - mouse.x
+    dy = parts[i].y - mouse.y
+    sqrDist = Math.sqrt(dx * dx + dy * dy)
+
+    if (sqrDist < 20) {
+      parts[i].c = colors[color]
+
+      parts[i].r = false
+    }
+
+    if (context) {
+      context.fillStyle = parts[i].c
+      context.strokeStyle = "#020202"
+      context.beginPath()
+      context.rect(parts[i].x2, parts[i].y2, 10, 10)
+      context.fill()
+      context.stroke()
+      context.closePath()
+    }
+  }
+}
+
+const onMouseDown = (e: MouseEvent) => {
   if (e.offsetX || e.offsetX == 0) {
     if (canvas) {
       mouse.x = e.offsetX - canvas.offsetLeft
       mouse.y = e.offsetY - canvas.offsetTop
     }
   }
+  changePixelColors()
 }
 
-const MouseOut = function () {
+const onMouseUp = () => {
   mouse.x = -100
   mouse.y = -100
+  clearInterval(timer)
 }
 
-//Clear the on screen canvas
-const clear = function () {
+const clearCanvas = () => {
   if (context && canvas) {
     context.fillStyle = "#151515"
     context.beginPath()

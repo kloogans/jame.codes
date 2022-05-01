@@ -55,13 +55,13 @@ const initialize = (canvas_id: string) => {
 }
 
 const start = () => {
-  const textSize = window.innerWidth > 767 ? 300 : 170
+  const textSize = window.innerWidth > 767 ? 300 : 140
   if (bgContext) {
     bgContext.fillStyle = "#020202"
     bgContext.font = `${textSize}px impact`
     bgContext.fillText(
       keyword,
-      window.innerWidth / (window.innerWidth > 767 ? 2.2 : 2.14) - textSize,
+      window.innerWidth / (window.innerWidth > 767 ? 2.2 : 2.5) - textSize,
       window.innerHeight / (window.innerWidth > 767 ? 1.48 : 2)
     )
   }

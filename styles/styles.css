@@ -168,7 +168,7 @@ grid-pattern-background {
 }
 
 .steps-transition {
-  transition: all 0.4s steps(5, end);
+  transition: transform 0.4s steps(5, end);
 }
 
 .main-btn {

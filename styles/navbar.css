@@ -11,9 +11,9 @@ logo-inner {
   background: url("https://cdn.discordapp.com/attachments/919408599963430934/965082987010072668/jamus-fluff-purple.gif")
     no-repeat center;
   background-size: contain;
-  width: 65px;
-  height: 60px;
-  transform: scaleX(-1);
+  /* width: 65px;
+  height: 60px; */
+  /* transform: scaleX(-1); */
 }
 
 nav-menu-button {

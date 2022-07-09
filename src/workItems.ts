@@ -1,5 +1,21 @@
 export const workItems = [
   {
+    title: "little builds",
+    logo: "/assets/littlebuilds-logo-icon.svg",
+    image: "",
+    description:
+      "little builds offers a simple, secure, and intuitive way to buy and sell verified digital assets like web sites, mobile apps, and domains. for transactions ranging from $10 to $100,000, little builds offers an escrow service (via <strong>escrow.com</strong api) for the most secure experience for transferring web asset ownership. Stripe and Paypal are also offered for transactions up to $10,000. <br /><br /><br /> the platform is being built from the ground up with the ultimate user experience being kept in mind at every step of the way. i am currently on track to launch little builds this fall of 2022!",
+    url: "https://littlebuilds.io",
+    stack: [
+      "typescript",
+      "react",
+      "nextjs",
+      "websockets",
+      "mongodb",
+      "tailwindcss"
+    ]
+  },
+  {
     title: "mepage",
     logo: "/assets/mepage-kevin-icon.svg",
     image: "",

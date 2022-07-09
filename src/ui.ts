@@ -4,7 +4,7 @@ const footerText = document.querySelector("#footer-text") as HTMLElement
 const date = new Date().getFullYear()
 
 if (footerText) {
-  footerText.innerHTML = ` &copy; ${date} videojame.com`
+  footerText.innerHTML = ` &copy; ${date} jame.tech`
 }
 
 const handleShowEmail = (): void => {

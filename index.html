@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="/styles/styles.css" />
   </head>
   <body class="overflow-x-hidden w-screen relative">
+    <div
+      id="loader"
+      class="fixed bg-zinc-800 top-0 left-0 w-full h-full flex flex-col items-center justify-center z-50"
+    >
+      <p class="text-lg text-white">Loading...</p>
+    </div>
+
     <video-overlay
       class="gradient-lines z-50 pointer-events-none hidden lg:block mix-blend-screen"
     >
@@ -43,10 +50,10 @@
           onclick="changeRoute('home')"
           class="absolute top-0 left-0 h-full ml-4 flex items-center justify-center z-50"
         >
-          <logo-inner class="flex items-center justify-center bg-zinc-900">
-            <div class="logo-gif"></div>
-            <p class="text-xl text-white font-share-tech pr-4 select-none">
-              james
+          <logo-inner class="flex items-center justify-center bg-zinc-900 p-5">
+            <!-- <div class="logo-gif"></div> -->
+            <p class="text-xl text-white font-share-tech select-none">
+              <strong>jame</strong>.tech
             </p>
           </logo-inner>
         </logo>
@@ -171,27 +178,26 @@
           >
             hi i'm
           </p>
-          <canvas
+          <!-- <canvas
             id="crumble-text"
             height="100%"
             class="z-10 max-w-[100vw] h-screen -translate-y-[2rem] lg:translate-y-0 cursor-crosshair"
-          ></canvas>
+          ></canvas> -->
+          <div class="logo-gif w-48 h-48 -scale-x-100"></div>
+
           <p
-            id="heading-post-text"
-            class="flex flex-col items-center justify-center text-lg font-share-tech text-center text-zinc-400 z-20 opacity-0 transition duration-200 ease-in-out translate-y-[3rem] lg:translate-y-[16.5rem]"
+            class="flex flex-col items-center justify-center text-lg font-share-tech mb-4 text-center text-zinc-300 z-20 transition duration-200 ease-in-out select-none"
           >
-            <span class="mb-5 select-none">
-              fullstack software developer & social media copywriter
-            </span>
-            <button
-              onclick="changeRoute('work')"
-              class="flex items-center justify-center text-black font-share-tech text-lg px-2 py-2 main-btn z-20 w-full max-w-[12rem]"
-              title="learn more"
-            >
-              <p class="mr-2">see my work</p>
-              <p class="rotate-90 lg:rotate-0">-></p>
-            </button>
+            gm, i'm james, a fullstack software developer.
           </p>
+          <button
+            onclick="changeRoute('work')"
+            class="flex items-center justify-center text-black font-share-tech text-lg px-2 py-2 main-btn z-20 w-full max-w-[12rem]"
+            title="learn more"
+          >
+            <p class="mr-2">see my work</p>
+            <p class="rotate-90 lg:rotate-0">-></p>
+          </button>
         </intro-section>
 
         <work-section
@@ -205,15 +211,41 @@
             class="text-white grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-[55rem] mb-5"
           >
             <li
-              class="border-step-purple w-full pt-5 bg-zinc-800 flex flex-col items-center justify-center"
+              class="border-step-purple w-full bg-zinc-800 flex flex-col items-center justify-center"
+            >
+              <div
+                style="
+                  background: url('/assets/littlebuilds-logo.svg') no-repeat;
+                  background-size: contain;
+                  background-position: center;
+                "
+                class="w-48 h-6 grid place-items-center py-10"
+              ></div>
+              <work-item-content
+                class="w-full bg--purple py-5 flex flex-col items-center justify-center flex-auto"
+              >
+                <p class="text-white text-md font-share-tech text-center mb-5">
+                  buy and sell digital assets up to <strong>$100k</strong>.
+                </p>
+                <button
+                  class="text-black font-share-tech text-lg px-2 py-1 main-btn"
+                  title="learn more"
+                  onclick="toggleWorkItemPopout(true, 'little builds')"
+                >
+                  learn more
+                </button>
+              </work-item-content>
+            </li>
+            <li
+              class="border-step-purple w-full bg-zinc-800 flex flex-col items-center justify-center"
             >
               <div
                 style="
                   background: url('/assets/mepage-logo-text.svg') no-repeat;
                   background-size: contain;
-                  background-position: 0 100%;
+                  background-position: center;
                 "
-                class="w-[10rem] h-10 min-h-[3rem] mb-5 -translate-x-[5%] -translate-y-[.4rem]"
+                class="w-48 h-6 grid place-items-center py-10 translate-y-1"
               ></div>
               <work-item-content
                 class="w-full bg--purple py-5 flex flex-col items-center justify-center flex-auto"
@@ -231,9 +263,11 @@
               </work-item-content>
             </li>
             <li
-              class="border-step-purple w-full bg-zinc-800 flex pt-5 flex-col items-center justify-center"
+              class="border-step-purple w-full bg-zinc-800 flex flex-col items-center justify-center"
             >
-              <p class="text-4xl font-bold mb-4 min-h-[3rem]">drafty</p>
+              <p class="text-4xl font-bold grid place-items-center py-6">
+                drafty
+              </p>
               <work-item-content
                 class="w-full bg--purple py-5 flex flex-col items-center justify-center flex-auto"
               >
@@ -294,7 +328,7 @@
               class="text-black font-share-tech text-lg px-2 py-1 main-btn z-20"
               title="learn more"
             >
-              &lt;- destroy my name
+              &lt;- back home
             </button>
             <button
               onclick="changeRoute('contact')"
@@ -327,7 +361,7 @@
               <span class="ml-2">github</span>
             </a>
             <a
-              href="https://twitter.com/videojame_"
+              href="https://twitter.com/kloogans"
               class="border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-2 text-xl text-white hover:text-[#00fff0] font-share-tech"
             >
               <img
@@ -372,10 +406,18 @@
       </footer>
     </app-container>
 
+    <script>
+      window.onload = () => {
+        const loaderContainer = document.querySelector("#loader")
+        const main = document.querySelector("#main")
+        main.style.transform = "translateX(33.3333%)"
+        loaderContainer.style.display = "none"
+      }
+    </script>
     <script type="module" src="/src/navMenu.ts" defer></script>
     <script type="module" src="/src/navigationHandler.ts" defer></script>
     <script type="module" src="/src/workItemPopout.ts" defer></script>
     <script type="module" src="/src/ui.ts" defer></script>
-    <script type="module" src="/src/crumblyText.ts" defer></script>
+    <!-- <script type="module" src="/src/crumblyText.ts" defer></script> -->
   </body>
 </html>

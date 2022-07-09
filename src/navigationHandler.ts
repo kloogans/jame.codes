@@ -17,29 +17,34 @@ export const changeRoute = (route: string): void => {
   toggleMenu(false)
 
   if (window.innerWidth > 767) {
-    if (currentRoute === "home") {
-      main.style.transform = "translateX(33.3333%)"
+    switch (currentRoute) {
+      case "home":
+        main.style.transform = "translateX(33.3333%)"
+        break
+      case "work":
+        main.style.transform = "translateX(0)"
+        break
+      case "contact":
+        main.style.transform = "translateX(-33.3333%)"
+        break
+      default:
+        main.style.transform = "translateX(33.3333%)"
     }
+    return
+  }
 
-    if (currentRoute === "work") {
-      main.style.transform = "translateX(0)"
-    }
-
-    if (currentRoute === "contact") {
-      main.style.transform = "translateX(-33.3333%)"
-    }
-  } else {
-    if (currentRoute === "home") {
+  switch (currentRoute) {
+    case "home":
       introEl.scrollIntoView({ behavior: "smooth" })
-    }
-
-    if (currentRoute === "work") {
+      break
+    case "work":
       workEl.scrollIntoView({ behavior: "smooth" })
-    }
-
-    if (currentRoute === "contact") {
+      break
+    case "contact":
       contactEl.scrollIntoView({ behavior: "smooth" })
-    }
+      break
+    default:
+      introEl.scrollIntoView({ behavior: "smooth" })
   }
 }
 

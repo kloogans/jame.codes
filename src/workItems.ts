@@ -42,9 +42,17 @@ export const workItems = [
     logo: `${url}/drafty-icon.svg`,
     image: "",
     description:
-      "twitter drafts are an incredibly nifty feature, but if you frequently switch between devices, your drafts don't carry over. drafty was created to solve this problem by having a central place to write, store, and tweet your ideas. <br /><br />drafty is a full-stack web app built with nextjs, typescript, mongodb, and tailwindcss. ",
+      "twitter drafts are an incredibly nifty feature, but if you frequently switch between devices like me, your drafts don't carry over between them. drafty was created to solve this problem by having a central place to write, store, and tweet your ideas. <br /><br />drafty is a full-stack web app built with nextjs, typescript, mongodb, and tailwindcss. ",
     url: "https://drafty.cc",
-    stack: ["nextjs", "react", "node", "twitter", "mongodb", "tailwindcss"]
+    stack: [
+      "nextjs",
+      "react",
+      "node",
+      "twitter",
+      "mongodb",
+      "tailwindcss",
+      "progressive web app"
+    ]
   },
   {
     title: "movie colors bot",

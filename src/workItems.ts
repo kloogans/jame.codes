@@ -48,7 +48,7 @@ export const workItems = [
   },
   {
     title: "movie colors bot",
-    logo: `${url}/assets/movie-color-bot-logo.svg`,
+    logo: `${url}/movie-color-bot-logo.svg`,
     image: "",
     description:
       "movie colors bot is a (now retired) autonomous twitter bot that tweets the color palettes of film posters. it uses the movie db api to fetch a random movie poster and then uses canvase to build a viewable color palette.",

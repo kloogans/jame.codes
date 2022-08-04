@@ -16,7 +16,7 @@ export const changeRoute = (route: string): void => {
   currentRoute = route
   toggleMenu(false)
 
-  if (window.innerWidth > 767) {
+  if (window.innerWidth > 1025) {
     switch (currentRoute) {
       case "home":
         main.style.transform = "translateX(33.3333%)"

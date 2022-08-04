@@ -165,7 +165,7 @@
 
       <main
         id="main"
-        class="w-full lg:w-[300vw] h-full lg:h-screen p-4 lg:p-0 flex flex-col lg:flex-row items-center flex-auto lg:translate-x-[33.3333%] steps-transition overflow-x-hidder lg:overflow-x-auto"
+        class="w-full lg:w-[300vw] h-full lg:h-screen p-4 lg:p-0 flex flex-col lg:flex-row items-center flex-auto translate-x-0 lg:translate-x-[33.3333%] steps-transition overflow-x-hidder lg:overflow-x-auto"
         style="min-height: calc(100vh - 120px)"
       >
         <intro-section
@@ -175,7 +175,7 @@
           <div class="logo-gif w-48 h-48 -scale-x-100"></div>
 
           <p
-            class="flex flex-col items-center justify-center text-lg font-share-tech mb-4 text-center text-zinc-300 z-20 transition duration-200 ease-in-out select-none"
+            class="flex flex-col items-center justify-center max-w-xs md:max-w-none text-lg font-share-tech mb-4 text-center text-zinc-300 z-20 transition duration-200 ease-in-out select-none"
           >
             gm, i'm james, a full stack software developer.
           </p>
@@ -406,7 +406,8 @@
       window.onload = () => {
         const loaderContainer = document.querySelector("#loader")
         const main = document.querySelector("#main")
-        main.style.transform = "translateX(33.3333%)"
+        if (window.innerWidth > 1025)
+          main.style.transform = "translateX(33.3333%)"
         loaderContainer.style.display = "none"
       }
     </script>

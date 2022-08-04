@@ -5,7 +5,7 @@ export default {
     ViteRadar({
       // Google Analytics tag injection
       analytics: {
-        id: "G-6TMDCJEHR3"
+        id: "G-SE0XZXRMD4"
       }
     })
   ]

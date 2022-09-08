@@ -173,7 +173,6 @@
     </aside>
 
     <main
-      id="main"
       class="w-full lg:w-[300vw] h-full lg:h-screen p-4 lg:p-0 flex flex-col lg:flex-row items-center flex-auto translate-x-0 lg:translate-x-[33.3333%] steps-transition overflow-x-hidder lg:overflow-x-auto"
       style="min-height: calc(100vh - 120px)"
     >
@@ -403,7 +402,7 @@
     <script>
       window.onload = () => {
         const loaderContainer = document.querySelector("#loader")
-        const main = document.querySelector("#main")
+        const main = document.querySelector("main")
         if (window.innerWidth > 1025)
           main.style.transform = "translateX(33.3333%)"
         loaderContainer.style.display = "none"

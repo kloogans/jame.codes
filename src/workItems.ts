@@ -21,23 +21,6 @@ export const workItems = [
     ]
   },
   {
-    title: "mepage",
-    logo: `${url}/mepage-kevin-icon.svg`,
-    image: "",
-    description:
-      "mepage is a link-in-bio webapp that allows users to create highly customized pages with several different types of links that offer unique functionality. users can easily create a personalized landing page and organize digital life under one umbrella.<br /><br />this was my first foray into building an entire fullstack SaaS business from scratch to acquirement. i was able to learn a TON about the SaaS development process, and how to effectively communicate with clients and users to both solve problems and enhance the overall experience.",
-    url: "https://mepage.is",
-    stack: [
-      "react",
-      "nextjs",
-      "graphql",
-      "apollo",
-      "node",
-      "mongodb",
-      "tailwindcss"
-    ]
-  },
-  {
     title: "drafty",
     logo: `${url}/drafty-icon.svg`,
     image: "",
@@ -55,12 +38,38 @@ export const workItems = [
     ]
   },
   {
-    title: "movie colors bot",
-    logo: `${url}/movie-color-bot-logo.svg`,
+    title: "f*cked up shop",
+    logo: `${url}/fu-icon.png`,
     image: "",
     description:
-      "movie colors bot is a (now retired) autonomous twitter bot that tweets the color palettes of film posters. it uses the movie db api to fetch a random movie poster and then uses canvase to build a viewable color palette.",
-    url: "https://github.com/jamesfromonline/movie-colors-bot",
-    stack: ["node", "canvas", "twitter api", "google sheets api"]
+      "the shop is a web store for multiple large twitter accounts that i also run - <a style='color:#fae500;' href='https://twitter.com/fuckedupfoods' target='_blank' rel='noreferrer noopener'>f*cked up foods</a> and <a style='color:#fae500;' href='https://twitter.com/fuckedupcars' target='_blank' rel='noreferrer noopener'>f*cked up cars</a>. it is a headless print-on-demand store built from scratch using nextjs, typescript, snipcart and printful apis, and tailwindcss. it uses snipcart/paypal to process payments and printful to handle order fulfillment. <br /><br />i also created all of the designs myself!",
+    url: "https://fuckedup.shop",
+    stack: [
+      "headless cms",
+      "nextjs",
+      "react",
+      "typescript",
+      "tailwindcss",
+      "snipcart",
+      "printful",
+      "apis"
+    ]
+  },
+  {
+    title: "mepage",
+    logo: `${url}/mepage-kevin-icon.svg`,
+    image: "",
+    description:
+      "mepage is a link-in-bio webapp that allows users to create highly customized pages with several different types of links that offer unique functionality. users can easily create a personalized landing page and organize digital life under one umbrella.<br /><br />this was my first foray into building an entire fullstack SaaS business from scratch to acquirement. i was able to learn a TON about the SaaS development process, and how to effectively communicate with clients and users to both solve problems and enhance the overall experience.",
+    url: "https://mepage.is",
+    stack: [
+      "react",
+      "nextjs",
+      "graphql",
+      "apollo",
+      "node",
+      "mongodb",
+      "tailwindcss"
+    ]
   }
 ]

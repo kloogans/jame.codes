@@ -177,7 +177,7 @@
           <p
             class="flex flex-col items-center justify-center max-w-xs md:max-w-none text-lg font-share-tech mb-4 text-center text-zinc-300 z-20 transition duration-200 ease-in-out select-none"
           >
-            gm, i'm james, a full stack software developer.
+            gm, i'm james, a full-stack software developer.
           </p>
           <button
             onclick="changeRoute('work')"
@@ -251,6 +251,37 @@
                 </button>
               </work-item-content>
             </li>
+
+            <li
+              class="border-step-purple w-full bg-zinc-800 flex pt-5 flex-col items-center justify-center"
+            >
+              <!-- <p class="text-3xl mb-5 min-h-[2.5rem] tracking-tight">
+                f*cked up shop
+              </p> -->
+              <div
+                style="
+                  background: url('/assets/fed-up-logo.png') no-repeat;
+                  background-size: contain;
+                  background-position: center;
+                "
+                class="w-48 h-6 grid place-items-center py-10 -translate-y-2"
+              ></div>
+              <work-item-content
+                class="w-full bg--purple py-5 flex flex-col items-center justify-center flex-auto"
+              >
+                <p class="text-white text-md font-share-tech text-center mb-5">
+                  headless web store using nextjs
+                </p>
+                <button
+                  class="text-black font-share-tech text-lg px-2 py-1 main-btn"
+                  title="learn more"
+                  onclick="toggleWorkItemPopout(true, 'f*cked up shop')"
+                >
+                  learn more
+                </button>
+              </work-item-content>
+            </li>
+
             <li
               class="border-step-purple w-full bg-zinc-800 flex flex-col items-center justify-center"
             >
@@ -297,27 +328,6 @@
                 </button>
               </work-item-content>
             </li> -->
-            <li
-              class="border-step-purple w-full bg-zinc-800 flex pt-5 flex-col items-center justify-center"
-            >
-              <p class="text-3xl mb-5 min-h-[2.5rem] tracking-tight">
-                movie colors
-              </p>
-              <work-item-content
-                class="w-full bg--purple py-5 flex flex-col items-center justify-center flex-auto"
-              >
-                <p class="text-white text-md font-share-tech text-center mb-5">
-                  twitter bot that generates color palettes.
-                </p>
-                <button
-                  class="text-black font-share-tech text-lg px-2 py-1 main-btn"
-                  title="learn more"
-                  onclick="toggleWorkItemPopout(true, 'movie colors bot')"
-                >
-                  learn more
-                </button>
-              </work-item-content>
-            </li>
           </ul>
           <div class="w-full hidden lg:grid grid-cols-2 gap-8 max-w-[55rem]">
             <button

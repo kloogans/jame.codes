@@ -10,7 +10,7 @@ type WorkItemPopoutProps = {
 }
 
 const popoutContainer = document.querySelector(
-  "work-item-popout"
+  "#work-item-popout"
 ) as HTMLElement
 const popoutClickableLayer = document.querySelector(
   "work-item-popout-clickable"

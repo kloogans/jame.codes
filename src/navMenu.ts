@@ -1,5 +1,5 @@
 const body = document.querySelector("body") as HTMLElement
-const navMenu = document.querySelector("nav-menu") as HTMLElement
+const navMenu = document.querySelector("#nav-menu") as HTMLElement
 const navMenuButton = document.querySelector("#nav-menu-button") as HTMLElement
 const navMenuClickable = document.querySelector(
   "nav-menu-clickable"

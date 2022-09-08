@@ -1,8 +1,8 @@
 import { toggleMenu } from "./navMenu"
 const main = document.querySelector("#main") as HTMLElement
-const introEl = document.querySelector("intro-section") as HTMLElement
-const workEl = document.querySelector("work-section") as HTMLElement
-const contactEl = document.querySelector("contact-section") as HTMLElement
+const introEl = document.querySelector("#intro") as HTMLElement
+const workEl = document.querySelector("#work") as HTMLElement
+const contactEl = document.querySelector("#contact") as HTMLElement
 
 let currentRoute = "home"
 

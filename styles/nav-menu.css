@@ -1,4 +1,4 @@
-nav-menu {
+#nav-menu {
   top: 117px;
   max-width: 20rem;
   transform: translateX(calc(100% + 8px));

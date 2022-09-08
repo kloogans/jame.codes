@@ -54,6 +54,11 @@ canvas {
   height: 100%;
 }
 
+*::selection {
+  background-color: var(--yellow);
+  color: black;
+}
+
 .bg--purple {
   background-color: var(--purple);
 }
@@ -244,12 +249,12 @@ grid-pattern-background {
   border-right: 6px black solid;
 }
 
-work-item-popout {
+#work-item-popout {
   transition: all 0.2s steps(3, end);
 }
 
 @media (max-width: 768px) {
-  work-item-popout {
+  #work-item-popout {
     max-width: calc(100vw - 28px);
   }
 }

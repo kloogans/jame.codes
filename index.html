@@ -200,7 +200,7 @@
     </aside>
 
     <main
-      class="w-full lg:w-[300vw] h-full lg:h-screen p-4 lg:p-0 flex flex-col lg:flex-row items-center flex-auto translate-x-0 lg:translate-x-[33.3333%] steps-transition overflow-x-hidder lg:overflow-x-auto"
+      class="w-full lg:w-[300vw] h-full lg:h-screen lg:p-0 flex flex-col lg:flex-row items-center flex-auto translate-x-0 lg:translate-x-[33.3333%] steps-transition overflow-x-hidden lg:overflow-x-auto"
       style="min-height: calc(100vh - 120px)"
     >
       <section
@@ -232,7 +232,7 @@
           current work
         </h2>
         <ul
-          class="text-white grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-[55rem] mb-5"
+          class="text-white grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-sm md:max-w-[55rem] mb-5 place-items-center"
         >
           <li
             class="border-step-purple w-full bg-zinc-800 flex flex-col items-center justify-center"
@@ -369,13 +369,15 @@
         <h2 class="font-share-tech text-zinc-400 text-2xl mb-10">
           where to catch up with me
         </h2>
-        <div class="text-white grid grid-cols-2 gap-8 w-full max-w-xl mb-10">
+        <div
+          class="text-white grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-xl mb-10 place-items-center"
+        >
           <a
             href="https://github.com/jamesfromonline"
             target="_blank"
             rel="noopener noreferrer"
             title="go to my github"
-            class="border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-2 text-xl text-white hover:text-[#00fff0] font-share-tech"
+            class="min-h-[136px] w-full max-w-sm border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-2 text-xl text-white hover:text-[#00fff0] font-share-tech"
           >
             <img src="/assets/github-icon.png" alt="github" class="w-16 h-16" />
             <span class="ml-2">github</span>
@@ -385,7 +387,7 @@
             target="_blank"
             rel="noopener noreferrer"
             title="go to my twitter"
-            class="border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-2 text-xl text-white hover:text-[#00fff0] font-share-tech"
+            class="w-full max-w-sm border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-2 text-xl text-white hover:text-[#00fff0] font-share-tech"
           >
             <img
               src="/assets/twitter-icon.png"
@@ -393,6 +395,7 @@
               class="w-16 h-16"
             />
             <span class="ml-2">twitter</span>
+            <span>(warning: language)</span>
           </a>
         </div>
         <p class="text-zinc-400 text-lg text-center mb-5 font-share-tech">or</p>

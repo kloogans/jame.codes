@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>james.tech | full-stack web developer</title>
+    <title>james | full-stack web developer portfolio</title>
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/styles/styles.css" />
 
@@ -21,7 +21,7 @@
       content="full-stack web development portfolio"
     />
     <meta name="twitter:creator" content="@kloogans" />
-    <meta name="twitter:url" content="https://jame.tech" />
+    <meta name="twitter:url" content="https://kloogans.com" />
     <meta name="twitter:title" content="jame.tech" />
     <meta
       name="twitter:description"
@@ -34,7 +34,7 @@
     />
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="https://jame.tech" />
+    <meta property="og:site_name" content="https://kloogans.com" />
   </head>
   <body
     class="overflow-x-hidden w-screen relative flex flex-col items-center justify-center"
@@ -79,7 +79,7 @@
         <logo-inner class="flex items-center justify-center bg-zinc-900 p-5">
           <!-- <div class="logo-gif"></div> -->
           <p class="text-xl text-white font-share-tech select-none">
-            <strong>jame</strong>.tech
+            <strong>james</strong>
           </p>
         </logo-inner>
       </logo>
@@ -106,7 +106,7 @@
       "
     >
       <grid-pattern-background
-        class="absolute top-0 left-0 bg-zinc-800 z-40 z-50"
+        class="absolute top-0 left-0 bg-zinc-800 0 z-50"
       ></grid-pattern-background>
 
       <nav-menu-clickable
@@ -180,7 +180,7 @@
       </button>
 
       <grid-pattern-background
-        class="absolute top-0 left-0 bg-zinc-800 z-40 z-50"
+        class="absolute top-0 left-0 bg-zinc-800 z-50"
       ></grid-pattern-background>
 
       <work-item
@@ -189,7 +189,7 @@
 
       <work-item-popout-clickable
         style="left: calc(100% + 8px); height: calc(100% + 1rem)"
-        class="flex flex-col items-center justify-center hidden z-[-1] absolute w-screen"
+        class="flex-col items-center justify-center hidden z-[-1] absolute w-screen"
       >
         <p
           class="font-share-tech text-center text-4xl text-white opacity-0 group-hover:opacity-100 transition duration-200 ease"
@@ -212,7 +212,7 @@
         <h1
           class="flex flex-col items-center justify-center max-w-xs md:max-w-none text-lg font-share-tech mb-4 text-center text-zinc-300 z-20 transition duration-200 ease-in-out select-none"
         >
-          hey, i'm james, a full-stack software developer.
+          hey! i'm james, a full-stack web developer.
         </h1>
         <button
           onclick="changeRoute('work')"
@@ -239,48 +239,22 @@
           >
             <div
               style="
-                background: url('/assets/littlebuilds-logo.svg') no-repeat;
+                background: url('/assets/bulkbuddy-logo.svg') no-repeat;
                 background-size: contain;
                 background-position: center;
               "
-              class="w-48 h-6 grid place-items-center py-10"
+              class="w-48 h-6 grid place-items-center py-10 scale-[0.7]"
             ></div>
             <work-item-content
               class="w-full bg--purple py-5 flex flex-col items-center justify-center flex-auto"
             >
               <p class="text-white text-md font-share-tech text-center mb-5">
-                buy and sell digital assets up to <strong>$100k</strong>.
-              </p>
-              <button
-                class="text-black font-share-tech text-lg px-2 py-1 main-btn"
-                title="learn more about little builds"
-                onclick="toggleWorkItemPopout(true, 'little builds')"
-              >
-                learn more
-              </button>
-            </work-item-content>
-          </li>
-          <li
-            class="border-step-purple w-full bg-zinc-800 flex flex-col items-center justify-center"
-          >
-            <div
-              style="
-                background: url('/assets/drafty-logo-full.svg') no-repeat;
-                background-size: contain;
-                background-position: center;
-              "
-              class="w-48 h-6 grid place-items-center py-10 -translate-y-2"
-            ></div>
-            <work-item-content
-              class="w-full bg--purple py-5 flex flex-col items-center justify-center flex-auto"
-            >
-              <p class="text-white text-md font-share-tech text-center mb-5">
-                a minimalist writing app for twitter users.
+                a minimal weight lifting tracking app.
               </p>
               <button
                 class="text-black font-share-tech text-lg px-2 py-1 main-btn"
                 title="learn more about drafty"
-                onclick="toggleWorkItemPopout(true, 'drafty')"
+                onclick="toggleWorkItemPopout(true, 'bulk buddy')"
               >
                 learn more
               </button>
@@ -290,16 +264,13 @@
           <li
             class="border-step-purple w-full bg-zinc-800 flex flex-col items-center justify-center"
           >
-            <!-- <p class="text-3xl mb-5 min-h-[2.5rem] tracking-tight">
-              f*cked up shop
-            </p> -->
             <div
               style="
-                background: url('/assets/fed-up-logo.png') no-repeat;
+                background: url('/assets/foodthings-logo.svg') no-repeat;
                 background-size: contain;
                 background-position: center;
               "
-              class="w-36 h-6 grid place-items-center py-10"
+              class="w-36 h-6 py-10 scale-90"
             ></div>
             <work-item-content
               class="w-full bg--purple py-5 flex flex-col items-center justify-center flex-auto"
@@ -310,7 +281,34 @@
               <button
                 class="text-black font-share-tech text-lg px-2 py-1 main-btn"
                 title="learn more about f'ed up shop"
-                onclick="toggleWorkItemPopout(true, 'f*cked up shop')"
+                onclick="toggleWorkItemPopout(true, 'food things')"
+              >
+                learn more
+              </button>
+            </work-item-content>
+          </li>
+
+          <li
+            class="border-step-purple w-full bg-zinc-800 flex flex-col items-center justify-center"
+          >
+            <div
+              style="
+                background: url('/assets/littlebuilds-logo.svg') no-repeat;
+                background-size: contain;
+                background-position: center;
+              "
+              class="w-48 h-6 py-10 scale-90"
+            ></div>
+            <work-item-content
+              class="w-full bg--purple py-5 flex flex-col items-center justify-center flex-auto"
+            >
+              <p class="text-white text-md font-share-tech text-center mb-5">
+                buy and sell web projects and small businesses.
+              </p>
+              <button
+                class="text-black font-share-tech text-lg px-2 py-1 main-btn"
+                title="learn more about little builds"
+                onclick="toggleWorkItemPopout(true, 'little builds')"
               >
                 learn more
               </button>
@@ -377,25 +375,28 @@
             target="_blank"
             rel="noopener noreferrer"
             title="go to my github"
-            class="min-h-[136px] w-full max-w-sm border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-2 text-xl text-white hover:text-[#00fff0] font-share-tech"
+            class="w-full max-w-sm border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-4 text-xl text-white hover:text-[#00fff0] font-share-tech"
           >
-            <img src="/assets/github-icon.png" alt="github" class="w-16 h-16" />
+            <img
+              src="/assets/github-icon.svg"
+              alt="github"
+              class="w-16 h-16 mb-1"
+            />
             <span class="ml-2">github</span>
           </a>
           <a
-            href="https://twitter.com/kloogans"
+            href="https://youtube.com/@kloogans"
             target="_blank"
             rel="noopener noreferrer"
-            title="go to my twitter"
-            class="w-full max-w-sm border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-2 text-xl text-white hover:text-[#00fff0] font-share-tech"
+            title="go to my youtube channel"
+            class="w-full max-w-sm border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-4 text-xl text-white hover:text-[#00fff0] font-share-tech"
           >
             <img
-              src="/assets/twitter-icon.png"
-              alt="twitter"
-              class="w-16 h-16"
+              src="/assets/youtube-icon.svg"
+              alt="youtube"
+              class="w-16 h-16 mb-1"
             />
-            <span class="ml-2">twitter</span>
-            <span>(warning: language)</span>
+            <span class="ml-2">youtube</span>
           </a>
         </div>
         <p class="text-zinc-400 text-lg text-center mb-5 font-share-tech">or</p>

@@ -62,7 +62,7 @@ export const workItems = [
     logo: `${url}/mepage-kevin-icon.svg`,
     image: "",
     description:
-      "mepage (acquired in 2022) is a link-in-bio webapp that allows users to create highly customized pages with several different types of links that offer unique functionality. users can easily create a personalized landing page and organize digital life under one umbrella.<br /><br />this was my first foray into building an entire full-stack saas business from scratch to acquirement. i was able to learn a ton about the saas development process, and how to effectively communicate with users to both solve problems and enhance the overall user experience.<br /><br />mepage was acquired in 2022 and i no longer maintain it.",
+      "mepage (acquired and shut down in 2022) is a link-in-bio webapp that allows users to create highly customized pages with several different types of links that offer unique functionality. users can easily create a personalized landing page and organize digital life under one umbrella.<br /><br />this was my first foray into building an entire full-stack saas business from scratch to acquirement. i was able to learn a ton about the saas development process, and how to effectively communicate with users to both solve problems and enhance the overall user experience.<br /><br />mepage was acquired in 2022 and i no longer maintain it.",
     url: "https://mepage.is",
     stack: [
       "react",

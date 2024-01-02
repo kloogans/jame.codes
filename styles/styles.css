@@ -271,3 +271,13 @@ grid-pattern-background {
   height: calc(100vh + 10px);
   width: 100%;
 }
+
+.work-flag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: rotate(45deg);
+  background: black;
+  color: white;
+  padding: 10px;
+}

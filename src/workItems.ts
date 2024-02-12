@@ -47,7 +47,7 @@ export const workItems = [
     image: "",
     description:
       "food things is a web store for a large twitter account that i grew to 1.1 million followers - <a style='color:#fae500;' href='https://twitter.com/messedupfoods' target='_blank' rel='noreferrer noopener'>messed up foods</a>. it is a headless print-on-demand store built from scratch using nextjs, typescript, snipcart and printful apis, and tailwindcss. it uses snipcart/paypal to process payments and printful to handle order fulfillment. <br /><br />i also created all of the designs myself!",
-    url: "https://foodthings.shop",
+    url: "https://foodthings.net",
     stack: [
       "headless cms",
       "nextjs",

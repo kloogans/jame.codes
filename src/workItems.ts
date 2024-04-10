@@ -1,7 +1,7 @@
 const url =
   import.meta.env.MODE === "development"
     ? "http://localhost:3000"
-    : "https://kloogans.com"
+    : "https://jame.codes"
 
 export const workItems = [
   {

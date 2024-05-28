@@ -6,7 +6,7 @@ const url =
 export const workItems = [
   {
     title: "lawn care quote pro",
-    logo: `${url}/assets/lcqp-icon-large.png`,
+    logo: `${url}/lcqp-icon-large.png`,
     image: "",
     description:
       "lawn care quote pro is a b2b web app that empowers lawn care businesses with instant, customizable quoting solutions. companies can streamline their quoting process, enhance client engagement, and boost their business efficiency with automated estimate generation. perfect for small to large lawn care providers looking to simplify client interactions and grow their business. <br /><br />i built lawn care quote pro from scratch using nextjs, typescript, mongodb, nextauth, and tailwindcss.",

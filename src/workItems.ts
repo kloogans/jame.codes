@@ -5,21 +5,19 @@ const url =
 
 export const workItems = [
   {
-    title: "little builds",
-    logo: `${url}/littlebuilds-logo-icon.svg`,
+    title: "lawn care quote pro",
+    logo: `${url}/assets/lcqp-icon-large.png`,
     image: "",
     description:
-      "little builds offers a simple, secure, and intuitive way to buy and sell verified digital assets like web sites, mobile apps, and domains. for transactions ranging from $10 to $100,000, little builds employs an escrow service (via <strong>escrow.com</strong> api) for the most secure experience for transferring web asset ownership. stripe and paypal are also offered for transactions up to $10,000. <br /><br /><br /> the platform is currently in development, and I am hoping to launch a beta version in late 2024. i am building it from scratch using nextjs, typescript, prisma, postgresql, trpc, nextauth, websockets, and tailwindcss. <br /><br />i am also designing the entire platform myself.",
-    url: "https://littlebuilds.co",
+      "lawn care quote pro is a b2b web app that empowers lawn care businesses with instant, customizable quoting solutions. companies can streamline their quoting process, enhance client engagement, and boost their business efficiency with automated estimate generation. perfect for small to large lawn care providers looking to simplify client interactions and grow their business. <br /><br />i built lawn care quote pro from scratch using nextjs, typescript, mongodb, nextauth, and tailwindcss.",
+    url: "https://lawncarequote.pro",
     stack: [
       "typescript",
       "react",
       "nextjs",
-      "prisma",
-      "postgresql",
-      "trpc",
+      "mongodb",
       "nextauth",
-      "websockets",
+      "stripe",
       "tailwindcss",
       "vercel"
     ]

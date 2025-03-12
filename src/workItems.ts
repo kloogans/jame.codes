@@ -1,7 +1,7 @@
 const url =
   import.meta.env.MODE === "development"
     ? "http://localhost:3000"
-    : "https://jame.codes"
+    : "https://jame.codes";
 
 export const workItems = [
   {
@@ -19,8 +19,8 @@ export const workItems = [
       "nextauth",
       "stripe",
       "tailwindcss",
-      "vercel"
-    ]
+      "vercel",
+    ],
   },
   {
     title: "bulk buddy",
@@ -36,34 +36,24 @@ export const workItems = [
       "mongodb",
       "tailwindcss",
       "progressive web app",
-      "vercel"
-    ]
+      "vercel",
+    ],
   },
   {
-    title: "food things",
-    logo: `${url}/foodthings-logo.svg`,
+    title: "what's my tdee?",
+    logo: null,
     image: "",
     description:
-      "food things is a web store for a large twitter account that i grew to 1.1 million followers - <a style='color:#fae500;' href='https://twitter.com/messedupfoods' target='_blank' rel='noreferrer noopener'>messed up foods</a>. it is a headless print-on-demand store built from scratch using nextjs, typescript, snipcart and printful apis, and tailwindcss. it uses snipcart/paypal to process payments and printful to handle order fulfillment. <br /><br />i also created all of the designs myself!",
-    url: "https://foodthings.net",
-    stack: [
-      "headless cms",
-      "nextjs",
-      "react",
-      "typescript",
-      "tailwindcss",
-      "snipcart",
-      "printful",
-      "apis",
-      "netlify"
-    ]
+      "what's my tdee? is a web app that helps users discover their total daily energy expenditure (tdee) with an advanced calculator. users can calculate their tdee, ideal weight, maximum muscular potential, recommended macro-nutrient ratios, and more with this simple tool. <br /><br />i built what's my tdee? from scratch using nextjs, typescript, and tailwindcss.",
+    url: "https://whatsmytdee.com",
+    stack: ["nextjs", "react", "typescript", "tailwindcss", "vercel", "seo"],
   },
   {
     title: "mepage",
     logo: `${url}/mepage-kevin-icon.svg`,
     image: "",
     description:
-      "mepage (acquired and shut down in 2022) is a link-in-bio webapp that allows users to create highly customized pages with several different types of links that offer unique functionality. users can easily create a personalized landing page and organize digital life under one umbrella.<br /><br />this was my first foray into building an entire full-stack saas business from scratch to acquirement. i was able to learn a ton about the saas development process, and how to effectively communicate with users to both solve problems and enhance the overall user experience.<br /><br />mepage was acquired and retired in 2022 and i no longer maintain it.",
+      "mepage (acquired and shut down in 2022) is a link-in-bio webapp that allows users to create highly customized pages with several different types of links that offer unique functionality. users can easily create a personalized landing page and organize digital life under one umbrella.<br /><br />this was my first foray into building an entire full-stack saas business from scratch to acquirement. i was able to learn a ton about the saas development process, and how to effectively communicate with users to both solve problems and enhance the overall user experience.<br /><br />mepage was acquired in 2022 and is no longer maintained.",
     url: "https://mepage.is",
     stack: [
       "react",
@@ -73,7 +63,7 @@ export const workItems = [
       "node",
       "mongodb",
       "tailwindcss",
-      "netlify"
-    ]
-  }
-]
+      "netlify",
+    ],
+  },
+];

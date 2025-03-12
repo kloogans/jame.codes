@@ -202,7 +202,7 @@
         <h1
           class="flex flex-col items-center justify-center max-w-xs md:max-w-none text-lg font-share-tech mb-4 text-center text-zinc-300 z-20 transition duration-200 ease-in-out select-none"
         >
-          hey! i'm james, a full-stack web developer.
+          hi! i'm james, a full-stack web developer.
         </h1>
         <button
           onclick="changeRoute('work')"
@@ -239,7 +239,7 @@
               class="w-full bg--purple py-5 flex flex-col items-center justify-center flex-auto"
             >
               <p class="text-white text-md font-share-tech text-center mb-5">
-                instant lawn care estimation tool
+                instant lawn care estimation tool.
               </p>
               <button
                 class="text-black font-share-tech text-lg px-2 py-1 main-btn"
@@ -280,24 +280,21 @@
           <li
             class="border-step-purple w-full bg-zinc-800 flex flex-col items-center justify-center"
           >
-            <div
-              style="
-                background: url('/assets/foodthings-logo.svg') no-repeat;
-                background-size: contain;
-                background-position: center;
-              "
-              class="w-36 h-6 py-10 scale-90"
-            ></div>
+            <p
+              class="text-2xl font-bold text-white h-6 py-10 flex items-center justify-center"
+            >
+              what's my tdee?
+            </p>
             <work-item-content
               class="w-full bg--purple py-5 flex flex-col items-center justify-center flex-auto"
             >
               <p class="text-white text-md font-share-tech text-center mb-5">
-                headless web store using nextjs
+                total daily energy expenditure calculator.
               </p>
               <button
                 class="text-black font-share-tech text-lg px-2 py-1 main-btn"
                 title="learn more about f'ed up shop"
-                onclick="toggleWorkItemPopout(true, 'food things')"
+                onclick="toggleWorkItemPopout(true, `what's my tdee?`)"
               >
                 learn more
               </button>
@@ -359,17 +356,17 @@
         class="flex flex-col items-center justify-center w-full lg:w-1/3 min-h-screen lg:h-full"
       >
         <h2 class="font-share-tech text-zinc-400 text-2xl mb-10">
-          where to catch up with me
+          where to find me
         </h2>
         <div
-          class="text-white grid grid-cols-1 w-full max-w-xl mb-10 place-items-center"
+          class="text-white grid grid-cols-1 gap-8 w-full max-w-xl mb-10 place-items-center"
         >
           <a
             href="https://github.com/kloogans?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             title="go to my github"
-            class="w-full max-w-sm border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-4 text-xl text-white hover:text-[#00fff0] font-share-tech"
+            class="block w-full max-w-sm border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-4 text-xl text-white hover:text-[#00fff0] font-share-tech"
           >
             <img
               src="/assets/github-icon.svg"
@@ -378,19 +375,20 @@
             />
             <span class="ml-2">github</span>
           </a>
+
           <!-- <a
-            href="https://youtube.com/@kloogans"
+            href="https://gitlab.com/jamesobrien"
             target="_blank"
             rel="noopener noreferrer"
-            title="go to my youtube channel"
-            class="w-full max-w-sm border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-4 text-xl text-white hover:text-[#00fff0] font-share-tech"
+            title="go to my gitlab"
+            class="block w-full max-w-sm border-step-purple bg-zinc-800 flex flex-col items-center justify-center py-4 text-xl text-white hover:text-[#00fff0] font-share-tech"
           >
             <img
-              src="/assets/youtube-icon.svg"
-              alt="youtube"
+              src="/assets/gitlab-icon.svg"
+              alt="github"
               class="w-16 h-16 mb-1"
             />
-            <span class="ml-2">youtube</span>
+            <span class="ml-2">gitlab</span>
           </a> -->
         </div>
         <p class="text-zinc-400 text-lg text-center mb-5 font-share-tech">or</p>
